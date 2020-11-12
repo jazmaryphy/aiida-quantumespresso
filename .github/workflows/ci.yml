@@ -112,6 +112,8 @@ jobs:
             run: |
                 pip install --upgrade setuptools
                 pip install -e .[tests]
+                pip uninstall -y aiida-pseudo
+                pip install git+https://github.com/aiidateam/aiida-pseudo@master
                 reentry scan
 
         -   name: Run pytest
